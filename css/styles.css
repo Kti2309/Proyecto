@@ -188,3 +188,36 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.product-item{
+  margin: 5cm;
+ text-align:left;
+margin-left:0.8cm;
+margin-top:2cm;
+}
+
+.imgcar{
+  width:14cm; height: auto;
+  float: left;
+margin-right:1cm;
+margin-bottom:0.8cm; 
+
+}
+
+.listado{
+  text-align:center;
+  margin-top:1cm;
+  font-weight:bold ;
+}
+.price{
+  text-decoration:underline;
+}
+.sold{
+  text-decoration:underline;
+}
+.titulo-descripcion{
+  text-decoration:underline;
+}
+.product-item h2{
+  font-weight:bold ;
+}
