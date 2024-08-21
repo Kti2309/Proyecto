@@ -6,9 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>eMercado - Todo lo que busques está aquí</title>
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/loginpage.css" rel="stylesheet">
   <style>
     body {
       background-color: rgb(248, 249, 250);
@@ -18,11 +21,21 @@
 
 <body>
   <main class="mt-5">
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
-    </div>
+    <div class="login-box">
+      <form action="" class="form" id="login">
+          <h1 class="form__title">Log In</h1>
+          <div class="form__message form__message--error form--hidden">Incorrect Username/Password combination</div>
+          <div class="form__input-group">
+              <input type="text" id="loginUser" autofocus class="form__input" placeholder="Email or Username">
+              <div class="form__input-error-message form--hidden">Incorrect Username or email</div>
+          </div>
+          <div class="form__input-group">
+              <input type="password" id="loginPassword" class="form__input" placeholder="Password">
+              <div class="form__input-error-message form--hidden">Incorrect password</div>
+          </div>
+          <button class="form__button" type="submit">Login</button>
+      </form>
+  </div>
   </main>
   <footer class="text-muted">
     <div class="container">
