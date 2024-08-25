@@ -21,22 +21,10 @@ container.innerHTML += `<div class="product-item">
 </div>
 </div>`;
 
-//container.innerHTML += `<p> ${product.name} ${product.description} </p>`;
-}
-}
-/*<div class="product-item">
-<div class="product-details">
-<img class="imgcar" src="img/prod50921_1.jpg" alt="chevrolet onix joy">
-  <h2>Chevrolet Onix Joy</h2>
 
-  <p><span class="titulo-descripcion">Descripción:</span> Generación 2019, variedad de colores. Motor 1.0, ideal para ciudad.</p>
-  <p class="id">Id: 50921 </p>
-  <p class="price">Precio: USD 13500</p>
-  <p class="sold"> Cantidad de vendidos: 14 </p>
-</div>
-</div>
-</div>
-*/
+}
+}
+
 fetch(autos)
 .then(response=>{
     if(!response.ok){
