@@ -246,3 +246,11 @@ margin-bottom:0.8cm;
   }
 }
 
+nav ul li#userDisplay {
+  float: right;
+  margin-right: 40 px;
+  color: white;
+  padding-top: 10px;
+}
+
+

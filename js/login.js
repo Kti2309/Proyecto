@@ -13,5 +13,14 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("Por favor, ingrese sus datos de inicio de sesión.")
         }
      })
+
 })
+document.getElementById('login').addEventListener('submit', function(e) {
+    e.preventDefault(); 
+    const username = document.getElementById('loginUser').value;
+    localStorage.setItem('username', username);
+    localStorage.setItem('isLoggedIn', true);
+    window.location.href = 'index.html'; 
+});
+
 

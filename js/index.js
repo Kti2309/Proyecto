@@ -17,4 +17,10 @@ document.addEventListener("DOMContentLoaded", function(){
     if (!isLoggedIn) {
         window.location.href = "login.html"
     }
+
+    const username = localStorage.getItem('username');
+    if (username) {
+        document.getElementById('userDisplay').textContent = `Bienvenido, ${username}`;
+    }
+    
 });
