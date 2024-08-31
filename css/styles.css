@@ -222,3 +222,27 @@ margin-bottom:0.8cm;
   font-weight:bold ;
 }
 
+@media (max-width:25rem){
+  .grid-container{
+    grid-template-columns:1fr;
+  }
+  .product-item{
+   text-align:left;
+  margin-left:0.1%;
+  margin-right:0.1%;
+  margin-top:0.5cm;
+  display:flex;   
+                  
+  }
+  .imgcar{
+  max-width:21rem;
+    float: left;
+  margin-right:1cm;
+  margin-bottom:0.8cm; 
+  
+  }
+  .listado h1{
+    text-align: center;
+  }
+}
+
