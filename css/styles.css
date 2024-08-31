@@ -218,15 +218,15 @@ margin-bottom:0.8cm;
 .titulo-descripcion{
   text-decoration:underline;
 }
-.product-item h2{
+ h2{
   font-weight:bold ;
 }
 
-@media (max-width:25rem){
+@media (max-width:400px){
   .grid-container{
     grid-template-columns:1fr;
   }
-  .product-item{
+ .product-item{
    text-align:left;
   margin-left:0.1%;
   margin-right:0.1%;
