@@ -195,7 +195,6 @@ a.custom-card:hover {
 margin-left:0.8cm;
 margin-top:2cm;
 }
-
 .imgcar{
   width:14cm; height: auto;
   float: left;
@@ -222,7 +221,7 @@ margin-bottom:0.8cm;
   font-weight:bold ;
 }
 
-@media (max-width:400px){
+@media (max-width:25rem){
   .grid-container{
     grid-template-columns:1fr;
   }
@@ -234,13 +233,10 @@ margin-bottom:0.8cm;
   display:flex;   
                   
   }
-  .imgcar{
-  max-width:21rem;
-    float: left;
-  margin-right:1cm;
-  margin-bottom:0.8cm; 
-  
+ .imgcar{
+ max-width:95%
   }
+  
   .listado h1{
     text-align: center;
   }
