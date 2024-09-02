@@ -195,7 +195,6 @@ a.custom-card:hover {
 margin-left:0.8cm;
 margin-top:2cm;
 }
-
 .imgcar{
   width:14cm; height: auto;
   float: left;
@@ -218,8 +217,39 @@ margin-bottom:0.8cm;
 .titulo-descripcion{
   text-decoration:underline;
 }
-.product-item h2{
+ h2{
   font-weight:bold ;
 }
+
+
+=======
+@media (max-width:25rem){
+  .grid-container{
+    grid-template-columns:1fr;
+  }
+ .product-item{
+   text-align:left;
+  margin-left:0.1%;
+  margin-right:0.1%;
+  margin-top:0.5cm;
+  display:flex;   
+                  
+  }
+ .imgcar{
+ max-width:95%
+  }
+  
+  .listado h1{
+    text-align: center;
+  }
+}
+
+nav ul li#userDisplay {
+  float: right;
+  margin-right: 40 px;
+  color: white;
+  padding-top: 10px;
+}
+
 
 
