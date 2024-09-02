@@ -117,3 +117,21 @@
 .form__button:active {
     transform: scale(0.98);
 }
+
+@media (max-width: 568px) {
+    .login-box {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .login-box {
+        padding: 40px;
+        max-width: 450px;
+    }
+
+    h1.form__title {
+        font-size: 26px;
+    }
+}
