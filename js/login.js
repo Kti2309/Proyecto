@@ -18,9 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
 document.getElementById('login').addEventListener('submit', function(e) {
     e.preventDefault(); 
     const username = document.getElementById('loginUser').value;
-    localStorage.setItem('username', username);
-    localStorage.setItem('isLoggedIn', true);
-    window.location.href = 'index.html'; 
+    localStorage.setItem('username', username); 
 });
 
 
