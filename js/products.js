@@ -1,5 +1,7 @@
 
-const autos = "https://japceibal.github.io/emercado-api/cats_products/101.json";
+const catID = localStorage.getItem("catID")
+
+const url = "https://japceibal.github.io/emercado-api/cats_products/"+catID+".json";
 
 const container = document.getElementById("container-autos");
 
@@ -25,7 +27,7 @@ container.innerHTML += `<div class="product-item">
 }
 }
 
-fetch(autos)
+fetch(url)
 .then(response=>{
     if(!response.ok){
         throw new Error("No se pueden mostrar los datos");
