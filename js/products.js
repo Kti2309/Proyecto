@@ -1,10 +1,15 @@
 
 const autos = "https://japceibal.github.io/emercado-api/cats_products/101.json";
 
+
 const container = document.getElementById("container-autos");
+
+let productList  ;
+
 
 function showData(products){
     //la constante product va a tomar el valor de cada uno de los elementos de products
+    container.innerHTML="";
 for(const product of products){
 console.log(product)
 
@@ -34,10 +39,46 @@ fetch(autos)
     
 })
 
+
+
 .then(function(data){
+    productList = data.products;
     console.log(data)
     showData(data.products)
 
 })
     
 
+
+function maxMin(){
+        
+        productList.sort((a,b)=> b.cost - a.cost);
+        console.log(productList);
+        showData(productList);
+}
+
+
+function minMax(){
+        
+    productList.sort((a,b)=> a.cost - b.cost);
+    console.log(productList);
+    showData(productList);
+}
+
+function relevante(){
+    productList.sort((a,b)=> b.soldCount - a.soldCount);
+    console.log(productList);
+    showData(productList);   
+}
+
+function buscar(){
+
+    const productMin = parseInt(document.getElementById('min').value)
+    const productMax = parseInt(document.getElementById('max').value)
+
+    const productosFiltrados = productList.filter(product=>{
+        return product.cost >= productMin && product.cost <= productMax;
+    });
+
+ showData(productosFiltrados);
+}

@@ -222,7 +222,7 @@ margin-bottom:0.8cm;
 }
 
 
-=======
+
 @media (max-width:25rem){
   .grid-container{
     grid-template-columns:1fr;
@@ -251,5 +251,7 @@ nav ul li#userDisplay {
   padding-top: 10px;
 }
 
-
-
+.filtro{
+  margin-top:1cm;
+  
+}

@@ -31,6 +31,7 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
+      
           </li>
         </ul>
       </div>
@@ -39,6 +40,20 @@
   <main class="pb-5 container">
     <div class="container">
       <h1 class="listado">Listado de Productos</h1>
+      <div class="d-grid gap-1 d-md-flex justify-content-md-end" id="filtroRel">
+        <button type="boton" class="btn btn-light" onclick="maxMin()">Mayor a menor</button>
+        <button type="boton" class="btn btn-light" onclick="minMax()" >Menor a mayor</button>
+        <button type="boton" class="btn btn-light" onclick="relevante()" >Mas relevantes</button>
+      </div>
+
+      <div class="d-grid gap-1 d-md-flex justify-content-md-end" id="filtro">
+     
+        <input type="number" id="min" placeholder="Min">
+       
+        <input type="number" id="max" placeholder="Max">
+        <button type="boton" onclick="buscar()" >Buscar</btn>
+      </div>
+
       <div class="product-list">
         <div id="container-autos"> </div>
 
