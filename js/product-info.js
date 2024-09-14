@@ -4,8 +4,9 @@ let product ;
 const params = new URLSearchParams(window.location.search);
 const productId = parseInt(params.get("id"));
 const catID = localStorage.getItem("catID");
-const catName = localStorage.getItem("catName");
 
+let catName;
+console.log(catName);
 
 console.log("El ID del producto seleccionado es: ", productId);
 console.log(catID);
@@ -21,12 +22,14 @@ function showProductDetails(product) {
     productDetailsContainer.innerHTML =`
         <div class="product-details">
         <img class="imgcar" src="${product.image}" alt="${product.name}">
-        <h2>${product.name}</h2>
-        <h3>"${catName}</h2>
+        <div class="detailsProduct"  >
+        <h2 class="product-Title" >${product.name}</h2>
+        <h3 class="product-category">${catName}</h2>
+        <p class="price"> ${product.currency} ${product.cost}</p>
         <p><span class="title-description">Descripción:</span> ${product.description}</p>
         <p class="id">Id: ${productId}</p>
-        <p class="price">Precio: ${product.currency} + ${product.cost}</p>
         <p class="sold">Cantidad de vendidos: ${product.soldCount}</p>
+        </div>
         `;
     }
 }
@@ -39,7 +42,8 @@ fetch(url)
 })
 
 .then(data => {
-    const products = data.products
+    const products = data.products;
+    catName = data.catName;
     
     const product = products.find(p => p.id === productId);
 
