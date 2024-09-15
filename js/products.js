@@ -10,6 +10,7 @@ let productList  ;
 function goToProductInfo(productId) {
     window.location.href = `product-info.html?id=${productId}`;
     localStorage.setItem("catID", catID);
+    localStorage.setItem("catID", catID);
 }
 
 function showData(products){
