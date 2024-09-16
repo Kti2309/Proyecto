@@ -194,6 +194,7 @@ a.custom-card:hover {
  text-align:left;
 margin-left:0.8cm;
 margin-top:2cm;
+cursor: pointer;
 }
 .imgcar{
   width:14cm; height: auto;
