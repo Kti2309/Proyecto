@@ -55,3 +55,57 @@ fetch(url)
     }
 })
     
+///
+
+let comments;
+
+
+const commentId = parseInt(params.get("product"));
+const commentID = localStorage.getItem("commentId");
+
+let commentName;
+console.log(commentName);
+
+console.log("El ID del producto seleccionado es: ", commentID);
+console.log(commentID);
+
+
+const productCommentsContainer = document.getElementById("containerProduct");
+
+function showProductDetailsComments(product) {
+
+    if (!product) {
+      alert("Sin información.")   
+    } else {
+        productCommentsContainer.innerHTML +=`
+        <div class="product-comment">
+            <p><strong>Usuario:</strong> ${product.user}</p>
+            <p><strong>Fecha:</strong> ${product.dateTime}</p>
+            <p><strong>Comentario:</strong> ${product.description}</p>
+            <p><strong>Puntuación:</strong> ${product.score} / 5</p>
+        </div>
+        `;
+    }
+}
+fetch(url)
+.then(response=>{
+    if(!response.ok){
+        throw new Error("No se pueden mostrar los datos");
+    }
+    return response.json();
+})
+
+.then(data => {
+    comments = data;
+    const productComments = comments.find(c => c.comment === commentId);
+    
+   
+
+    if (product) {
+        showProductDetailsComments(product);
+    } else {
+        alert("Producto no encontrado.");
+        window.location.href = "categories.html";
+    }
+})
+    
