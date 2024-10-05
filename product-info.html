@@ -40,9 +40,35 @@
   <main>
     <div class="containerProduct">
       <div id="containerProduct">
-        <div class="containerProduct">
+        <div class="containerComment">
           <div id="productComment">
       </div>
+    </div>
+    
+    <div class="containerForm" >
+      <form  method="post">
+        <label><alert>¡Deja tu comentario!</alert></label>
+         <div class="elem-group"> <label for="name">Nombre de Usuario</label> 
+          <input type="text" id="name" name="visitor_name" placeholder="Nombre de ejemplo" required>
+         </div> 
+         <div class="dateName"><label for="date" > Fecha</label>
+          <input type="date" id="start" name="date" placeholder="00/00/0000" />
+         </div>
+            <div class="elem-group"> 
+              <label for="message">Comentario</label>
+               <textarea id="message" name="visitor_message" placeholder="Escribe tu mensaje aquí." required></textarea>
+               </div> 
+               <div>
+                <btn class="fa fa-star"></btn>
+                <btn class="fa fa-star"></btn>
+                <btn class="fa fa-star"></btn>
+                <btn class="fa fa-star"></btn>
+                <btn class="fa fa-star"></btn>
+               </div>
+               <button type="submit">Enviar Comentario</button>
+              </form>
+             
+
     </div>
 
   </main>
