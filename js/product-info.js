@@ -1,4 +1,6 @@
 
+
+
 const params = new URLSearchParams(window.location.search);
 const productId = parseInt(params.get("id"));
  
@@ -63,9 +65,10 @@ fetch(url)
     productInfo = data;
 
     console.log(data);
-    showProductDetails(data);
-})
     
+    showProductDetails(data);
+});
+ 
 // Hay que mostrar los coments baby
 
 urlComments = "https://japceibal.github.io/emercado-api/products_comments/"+productId+".json"
@@ -75,56 +78,34 @@ let comments;
 /*const commentId = parseInt(params.get("product"));
 const commentID = localStorage.getItem("commentId");*/
 
-let commentName;
+let comment;
 console.log(urlComments);
 
-console.log("El ID del producto seleccionado es: ", commentID);
-console.log(commentID);
 
+const productCommentsContainer = document.getElementById("productComment");
 
-const productCommentsContainer = document.getElementById("containerComment");
+function showProductDetailsComments(comment) {
+    
 
-function showProductDetailsComments(product) {
-
-    if (!product) {
+    if (!comment) {
       alert("Sin información.")   
     } else {
-        productCommentsContainer.innerHTML +=`
-        <div class="product-comment">
-        <div class="containerForm" >
-      <form  method="post">
-        <label><alert>¡Deja tu comentario!</alert></label>
-         <div class="elem-group"> <label for="name">Nombre de Usuario</label> 
-          <input type="text" id="name" name="visitor_name" placeholder="Nombre de ejemplo" required>
-         </div> 
-         <div class="dateName"><label for="date" > Fecha</label>
-          <input type="date" id="start" name="date" placeholder="00/00/0000" />
-         </div>
-            <div class="elem-group"> 
-              <label for="message">Comentario</label>
-               <textarea id="message" name="visitor_message" placeholder="Escribe tu mensaje aquí." required></textarea>
-               </div> 
-               <div>
-                <btn class="fa fa-star"></btn>
-                <btn class="fa fa-star"></btn>
-                <btn class="fa fa-star"></btn>
-                <btn class="fa fa-star"></btn>
-                <btn class="fa fa-star"></btn>
-               </div>
-               <button type="submit">Enviar Comentario</button>
-              </form>
-             
+      
 
-    </div>
-            <p><strong>Usuario:</strong> ${product.user}</p>
-            <p><strong>Fecha:</strong> ${product.dateTime}</p>
-            <p><strong>Comentario:</strong> ${product.description}</p>
-            <p><strong>Puntuación:</strong> ${product.score} / 5</p>
-        </div>
+       comment.forEach(comment => {
+        productCommentsContainer.innerHTML += `
+            <div class="comment-card border border-dark rounded p-3 mb-3" id="commentBox">
+                <p class="comment-user"><strong>Usuario:</strong> ${comment.user}</p>
+                <p class="comment-date"><strong>Fecha:</strong> ${comment.dateTime}</p>
+                <p class="comment-description"><strong>Comentario:</strong> ${comment.description}</p>
+                <p class="comment-score"><strong>Puntuación:</strong> ${comment.score}</p>
+            </div>
         `;
-    }
-}
-fetch(url)
+        
+    });
+};
+};
+fetch(urlComments)
 .then(response=>{
     if(!response.ok){
         throw new Error("No se pueden mostrar los datos");
@@ -132,16 +113,12 @@ fetch(url)
     return response.json();
 })
 
+
 .then(data => {
     comment = data;
-    const productComments = product.find(c => c.comment === commentId);
     
-   
+    
+    console.log(data);
 
-    if (product) {
-        showProductDetailsComments(product);
-    } else {
-        alert("Producto no encontrado.");
-        window.location.href = "categories.html";
-    }
+    showProductDetailsComments(data);
 });
