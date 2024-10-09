@@ -57,13 +57,13 @@
       <h3>¡Dejanos tu comentario!</h3>
       
       
-        <input placeholder="Nombre de Usuario" type="text" tabindex="1" required autofocus>
+        <input placeholder="Nombre de Usuario" type="text" id="user" tabindex="1" required autofocus>
       <br>         
-        <input type="date" id="start" name="dateComment" value="" min="0000-00-00" max="0000-00-00" />
+        <input type="date" id="date" name="dateComment" value="" min="0000-00-00" max="0000-00-00" />
       <br>
-        <input placeholder="Deja tu comentario aquí..." type="text" tabindex="1" required autofocus>
+        <input placeholder="Deja tu comentario aquí..." type="text" id="comment" tabindex="1" required autofocus>
       <br>
-      <div class="rating">
+      <div class="rating" id="rating">
         <h7>Puntuacón</h7>
         <input id="star1" type="radio" name="stars" value="5"><label for="star1" class="fa-solid fa-star"></label>
         <input id="star2" type="radio" name="stars" value="4"><label for="star2" class="fa-solid fa-star"></label>
@@ -72,7 +72,7 @@
         <input id="star5" type="radio" name="stars" value="1"><label for="star5" class="fa-solid fa-star"></label>
     </div>
     <fieldset></fieldset>
-    <button name="submit" type="submit" id="contactus-submit" data-submit="...Sending">Enviar</button>
+    <button name="submit" type="button" id="contactus"  onclick="agregarComentario()" >Enviar</button>
   </fieldset>
     
     </form>
@@ -82,6 +82,17 @@
    <main>
     <div class="containerComment">
       <div id="productComment">
+        
+      </div>
+    </div>
+
+
+</div>
+  </main>
+  <main id="related">
+    <div class="relatedProducts">
+     <h2 class="card-header" > Productos Relacionados</h2>
+      <div id="relatedProducts" class="col-md-8  comment-card border border-dark rounded p-3 mb-3 ">
         
       </div>
     </div>

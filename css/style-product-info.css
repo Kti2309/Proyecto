@@ -100,6 +100,36 @@ p {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#commentBox{
-    
+.container {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: space-between; /* Espaciado entre columnas */
+}
+
+.main-content {
+    flex: 1; /* Ocupa el espacio restante */
+    padding: 20px;
+}
+
+.related-products {
+    width: 300px; /* Ancho fijo para la columna de productos relacionados */
+    background-color: #f9f9f9; /* Color de fondo */
+    border-left: 1px solid #ccc; /* Borde a la izquierda */
+    padding: 20px;
+}
+
+.related-products h2 {
+    margin-top: 0; /* Eliminar margen superior */
+}
+
+.product-item {
+    margin-bottom: 15px; /* Espacio entre productos */
+    border: 1px solid #ddd; /* Borde alrededor del producto */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px;
+    text-align: center; /* Centrar texto */
+}
+
+.product-item img {
+    max-width: 100%; /* Ajustar imagen al tamaño del contenedor */
+    height: auto;
 }

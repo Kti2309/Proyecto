@@ -52,6 +52,24 @@ function showProductDetails(product) {
         `;
     }
 }
+let relatedProducts = document.getElementById("relatedProducts")
+
+function showRelatedProducts(product){
+    
+    product.relatedProducts.forEach(product => {
+   
+        relatedProducts.innerHTML+=`
+        <div class="relatedProductsDiv"  onclick="goToProductInfo(${product.id})">
+        <h2 class="product-Title" >${product.name}</h2>
+        <p class="id">Id: ${product.id}</p>
+        <img class="img-fluid" src="${product.image}" alt="${product.name}">
+        </div>
+        `
+
+    });
+
+};
+
 fetch(url)
 .then(response=>{
     if(!response.ok){
@@ -67,16 +85,18 @@ fetch(url)
     console.log(data);
     
     showProductDetails(data);
+    
+    showRelatedProducts(data);
 });
+
+
+
+
  
 // Hay que mostrar los coments baby
 
 urlComments = "https://japceibal.github.io/emercado-api/products_comments/"+productId+".json"
 let comments;
-
-
-/*const commentId = parseInt(params.get("product"));
-const commentID = localStorage.getItem("commentId");*/
 
 let comment;
 console.log(urlComments);
@@ -122,3 +142,36 @@ fetch(urlComments)
 
     showProductDetailsComments(data);
 });
+
+
+
+function agregarComentario() {
+    
+    const commentContainer = document.getElementById("productComment");
+
+    const commentBox = document.createElement("div");
+    commentBox.className = "comment-card border border-dark rounded p-3 mb-3";
+    commentBox.id = "commentBox";
+
+    const user = document.getElementById("user").value;
+    const date = document.getElementById("date").value;
+    const comment = document.getElementById("comment").value;
+    const rating = document.querySelector('input[name="stars"]:checked').value;
+
+    commentBox.innerHTML = `
+        <p class="comment-user"><strong>Usuario:</strong> ${user}</p>
+        <p class="comment-date"><strong>Fecha:</strong> ${date}</p>
+        <p class="comment-description"><strong>Comentario:</strong> ${comment}</p>
+        <p class="comment-score"><strong>Puntuación:</strong> ${rating}</p>
+    `;
+
+    commentContainer.appendChild(commentBox);
+}
+
+// 
+
+function goToProductInfo(productId) {
+    window.location.href = `product-info.html?id=${productId}`;
+    localStorage.setItem("catID", catID);
+    localStorage.setItem("catID", catID);
+};
