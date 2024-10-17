@@ -27,6 +27,84 @@
 </head>
 
 <body>
+  <main>
+    <section class="vh-100" >
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-lg-10 mb-4 mb-lg-0 ">
+            <div class="card mb-3" style="border-radius: .5rem;">
+              <div class="row g-0">
+                <div class="col-md-4 gradient-custom text-center text-white"
+                  style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                  <img src=""
+                    alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                 
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body ">
+                    <h3>Perfil</h3>
+                    <hr class="mt-0 mb-4">
+                    <div class="row pt-1">
+
+                      <div class="col-6 mb-3">
+                        <h6>Nombre*</h6>
+                        <input type="text" name="nombre" placeholder="Primer Nombre ">
+                      </div>
+                      <div class="col-6 mb-3">
+                        <h6>Segundo Nombre </h6>
+                        <input type="text" name="segundonombre" placeholder="Segundo Nombre  ">
+                      </div>
+
+                    </div>
+                    <div class="row pt-1">
+
+                      <div class="col-6 mb-3">
+                        <h6>Apellido*</h6>
+                        <input type="text" name="primerapellido" placeholder="Primer Apellido ">
+                      </div>
+                      <div class="col-6 mb-3">
+                        <h6>Segundo Apellido</h6>
+                        <input type="text" name="segundoapellido" placeholder="Segundo Apellido ">
+                      </div>
+
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Email</h6>
+                      <input type="text" name="email" placeholder="info@example.com">
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Telefono</h6>
+                      <input type="text" name="telefono" placeholder="ej:095783451">
+                    </div>
+                   
+                    <hr class="mt-0 mb-4">
+                    <div class="row pt-1">
+                      <div class="col-6 mb-3">
+                        <button type="button" class="btn btn-dark">Guardar Cambios</button>
+                      </div>
+                      <div class="col-6 mb-3">
+                        
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" role="switch" id="toggle" />
+                          <label class="form-check-label"  for="switchCheckChecked">Modo Oscuro</label>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-start">
+                      <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                      <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                      <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -45,6 +123,7 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
+            <div class="dropdown" id="userDisplay">
           </li>
         </ul>
       </div>
@@ -52,9 +131,7 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+     
     </div>
   </main>
   <footer class="text-muted">

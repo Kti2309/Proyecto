@@ -21,4 +21,11 @@ document.getElementById('login').addEventListener('submit', function(e) {
     localStorage.setItem('username', username); 
 });
 
+document.addEventListener("DOMContentLoaded", ()=> {
+    let session = localStorage.getItem("isLoggedIn");
+    if (session){
+        window.location.href = "index.html"
+    }
+})
+
 

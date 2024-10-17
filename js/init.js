@@ -38,4 +38,37 @@ let getJSONData = function(url){
         hideSpinner();
         return result;
     });
-}
+  };
+
+    document.addEventListener("DOMContentLoaded", function(){
+    const username = localStorage.getItem('username');
+    if (username) {
+        document.getElementById('userDisplay').innerHTML = `
+            <button class="btn btn-secondary dropdown-toggle" type="button" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+            Bienvenido, ${username}
+            </button>
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="my-profile.html">Perfil</a></li>
+            <li><a class="dropdown-item" href="cart.html">Carrito</a></li>
+            <li><a class="dropdown-item" id="session-end" href="login.html">Cerrar sesión</a></li>
+            </ul>`;
+    };
+});
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  let logOutBtn = document.getElementById("session-end");
+
+  logOutBtn.addEventListener("click", ()=> {
+    localStorage.removeItem("username");
+    localStorage.removeItem("isLoggedIn");
+  })
+});
+
+
+document.addEventListener("DOMContentLoaded", ()=>{
+const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+if (!isLoggedIn) {
+    window.location.href = "login.html"
+};
+});

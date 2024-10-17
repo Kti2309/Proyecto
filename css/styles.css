@@ -5,6 +5,13 @@
   font-family: 'Verdana', serif !important;
 }
 
+.dark{
+  background-color: #333 ;
+  color: white;
+  
+
+} 
+
 .jumbotron .display-4 {
   font-weight: bold;
 }
@@ -245,12 +252,13 @@ margin-bottom:0.8cm;
   }
 }
 
-nav ul li#userDisplay {
+/*nav ul li #userDisplay {
+  display: flex;
   float: right;
   margin-right: 40 px;
   color: white;
-  padding-top: 10px;
-}
+  margin-top: 8;
+}*/
 
 .filtro{
   margin-top:1cm;

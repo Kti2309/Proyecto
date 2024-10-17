@@ -12,15 +12,4 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-
-    if (!isLoggedIn) {
-        window.location.href = "login.html"
-    }
-
-    const username = localStorage.getItem('username');
-    if (username) {
-        document.getElementById('userDisplay').textContent = `Bienvenido, ${username}`;
-    }
-    
 });
