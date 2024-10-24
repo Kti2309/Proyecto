@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Cargar datos desde localStorage al cargar la página
     const savedData = JSON.parse(localStorage.getItem('userProfile'));
+    const storedEmail = localStorage.getItem('username');
     if (savedData) {
         nombre.value = savedData.nombre || '';
         apellido.value = savedData.apellido || '';
@@ -23,16 +24,17 @@ document.addEventListener('DOMContentLoaded', function () {
         segundoNombre.value = savedData.segundoNombre || '';
         segundoApellido.value = savedData.segundoApellido || '';
         telefono.value = savedData.telefono || '';
-    }
-
-    // Validar solo campos requeridos
+    } else if (storedEmail) {
+        email.value = storedEmail;
+    };
+  
     form.addEventListener('submit', function (event) {
         if (!nombre.value || !apellido.value || !email.value) {
             event.preventDefault();
             event.stopPropagation();
             form.classList.add('was-validated');
         } else {
-            // Guardar datos en localStorage
+           
             const userProfile = {
                 nombre: nombre.value,
                 apellido: apellido.value,
