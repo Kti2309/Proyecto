@@ -283,3 +283,8 @@ margin-bottom:0.8cm;
   object-fit: cover;
   
 }
+
+
+#miCarrito{
+  align-self:center;
+}

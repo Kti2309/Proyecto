@@ -20,7 +20,7 @@ function showProductDetails(product) {
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
         <div class="carousel-item active">
-        <img class="imgcar" src="${product.images[0]}" alt="${product.name}">
+        <img class="imgcar" id="imgCar" src="${product.images[0]}" alt="${product.name}">
         </div>
         <div class="carousel-item">
          <img class="imgcar" src="${product.images[1]}" alt="${product.name}">
@@ -42,17 +42,39 @@ function showProductDetails(product) {
         </button>
         </div>
         <div class="detailsProduct"  >
-        <h2 class="product-Title" >${product.name}</h2>
-        <h3 class="product-category">${product.category}</h2>
-        <p class="price"> ${product.currency} ${product.cost}</p>
+        <h2 class="product-Title" id="product-name" >${product.name}</h2>
+        <h3 class="product-category" >${product.category}</h2>
+        <p class="price"> <span id="currency">${product.currency}</span> <span id="price">${product.cost}</span></p>
+        <button class="btn btn-primary" id="goToCartBtn" onclick="goToCart()" marcador="1">Agregar al Carrito</button>
         <p><span class="title-description">Descripción:</span> ${product.description}</p>
         <p class="id">Id: ${product.id}</p>
         <p class="sold">Cantidad de vendidos: ${product.soldCount}</p>
         </div>
         `;
     }
-}
+};
 let relatedProducts = document.getElementById("relatedProducts")
+
+let goToCartBtn = document.getElementById("goToCartBtn");
+
+function goToCart(){
+    
+    let name = document.getElementById("product-name").textContent;
+    let cost = document.getElementById("price").textContent;
+    let currency = document.getElementById("currency").textContent;
+    let image = document.getElementById("imgCar").src;
+
+    const cartItem = {
+        name : name,
+        cost : cost,
+        currency : currency,   
+        image : image,
+    };
+    localStorage.setItem('cartItem', JSON.stringify(cartItem));
+    console.log(cartItem);
+    
+    window.location.href = "/cart.html";
+};
 
 function showRelatedProducts(product){
     

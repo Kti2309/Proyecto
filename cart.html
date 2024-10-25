@@ -32,15 +32,38 @@
           <li class="nav-item">
             <div class="dropdown" id="userDisplay">
           </li>
+          <li class="nav-item">
+             
+             <a class="nav-link" href="cart.html"><svg width="30"  fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+            </svg></a>
+              
+            
+          </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div class="row">
+          <h2 id="miCarrito">
+            Mi carrito
+          </h2>
+          <main id="items" class="col-sm-8 row"></main>
+          <!-- Carrito -->
+          <aside class="col-sm-4">
+              <h2>Resumen del pedido</h2>
+              <!-- Elementos del carrito -->
+              <ul id="carrito" id="cart" class="list-group"></ul>
+              <hr>
+              <!-- Precio total -->
+              <p class="text-right">Total: <span id="total"></span>&euro;</p>
+              <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+          </aside>
       </div>
+  </div>
+  </div>
     </div>
   </main>
   <footer class="text-muted">
